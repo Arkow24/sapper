@@ -6,3 +6,24 @@
 //
 
 import Foundation
+import UIKit
+
+
+struct UserModel {
+    
+    var name: String
+    var positions: [Int]
+   
+    
+    init(name: String) {
+        self.name = name
+        self.positions = []
+    }
+    
+    init(name: String, positions: [Int]) {
+        self.name = name
+        self.positions = positions
+    }    
+}
+
+
