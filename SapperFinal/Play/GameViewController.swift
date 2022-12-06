@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 final class GameViewController: UIViewController {
     
     //MARK: - Properties
@@ -40,17 +39,15 @@ final class GameViewController: UIViewController {
     
     func setupView() {
         guard let selectedPlayer = player else {return}
-        
         title = "Play with: \(String(describing: selectedPlayer.name))"
-        contentView.playCollectionView.dataSource = self
-        contentView.playCollectionView.delegate = self
-        contentView.playCollectionView.register(GameViewCell.self, forCellWithReuseIdentifier: GameViewCell.identifier)
     }
     
     func setupBindings() {
-        
+        contentView.playCollectionView.dataSource = self
+        contentView.playCollectionView.delegate = self
+        contentView.playCollectionView.register(GameViewCell.self,
+        forCellWithReuseIdentifier: GameViewCell.identifier)
     }
-    
 }
 
 extension GameViewController: UICollectionViewDataSource {
@@ -58,9 +55,12 @@ extension GameViewController: UICollectionViewDataSource {
         data.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GameViewCell.identifier, for: indexPath) as? GameViewCell else {return UICollectionViewCell()}
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: GameViewCell.identifier, for: indexPath)
+            as? GameViewCell else {return UICollectionViewCell()}
         
         let item = data[indexPath.item]
         

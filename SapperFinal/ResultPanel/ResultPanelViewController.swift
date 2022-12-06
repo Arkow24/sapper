@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 final class ResultPanelViewController: UIViewController {
     
     //MARK: - Properties
@@ -37,7 +36,6 @@ final class ResultPanelViewController: UIViewController {
     func setupView() {
         guard let selectedGame = selectedPlayer else {return}
         title = "Result Panel \(selectedGame.name))"
-
         contentView.playerName.text = selectedGame.name
         contentView.resultPlayer.text = String(resultScore)
     }

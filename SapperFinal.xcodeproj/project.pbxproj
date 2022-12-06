@@ -94,6 +94,7 @@
 		6C796AB528E76C9C004CC542 /* SapperFinal */ = {
 			isa = PBXGroup;
 			children = (
+				6CE21EAC293FF8050036D7B9 /* Features */,
 				6CE72D2C28EF247700ED7F23 /* ResultPanel */,
 				6C796AE628EA36FB004CC542 /* Play */,
 				6C796ADF28E893B9004CC542 /* Lobby */,
@@ -105,9 +106,6 @@
 				6C796ABF28E76C9E004CC542 /* Assets.xcassets */,
 				6C796AC128E76C9E004CC542 /* LaunchScreen.storyboard */,
 				6C796AC428E76C9E004CC542 /* Info.plist */,
-				6C796ACD28E76D6B004CC542 /* BaseView.swift */,
-				6C796AD428E772ED004CC542 /* FirebaseClient.swift */,
-				6C796AD628E7734A004CC542 /* UserModel.swift */,
 			);
 			path = SapperFinal;
 			sourceTree = "<group>";
@@ -158,6 +156,16 @@
 				6C796AEB28EA376A004CC542 /* GameViewCell.swift */,
 			);
 			path = Play;
+			sourceTree = "<group>";
+		};
+		6CE21EAC293FF8050036D7B9 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				6C796ACD28E76D6B004CC542 /* BaseView.swift */,
+				6C796AD428E772ED004CC542 /* FirebaseClient.swift */,
+				6C796AD628E7734A004CC542 /* UserModel.swift */,
+			);
+			path = Features;
 			sourceTree = "<group>";
 		};
 		6CE72D2C28EF247700ED7F23 /* ResultPanel */ = {

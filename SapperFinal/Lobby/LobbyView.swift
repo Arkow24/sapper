@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 final class LobbyView: BaseView {
     
     // MARK: - Properies
@@ -36,8 +35,7 @@ final class LobbyView: BaseView {
     }
     
     override func setupSubviews() {
-        addSubview(tableView)
-        addSubview(setButton)
+        [tableView,setButton].forEach(addSubview)
     }
     
     override func setupConstraints() {
@@ -50,8 +48,6 @@ final class LobbyView: BaseView {
             setButton.trailingAnchor.constraint(equalTo: trailingAnchor),
             setButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40),
             setButton.heightAnchor.constraint(equalToConstant: 70)
-        
         ])
     }
-    
 }

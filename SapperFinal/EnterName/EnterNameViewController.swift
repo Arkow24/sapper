@@ -7,9 +7,10 @@
 
 import UIKit
 
-class EnterNameViewController: UIViewController {
+final class EnterNameViewController: UIViewController {
 
     // MARK: - Properties
+    
     var name: String?
     var contentView: EnterNameView {
         return view as! EnterNameView
@@ -30,7 +31,6 @@ class EnterNameViewController: UIViewController {
     
     func setupView() {
         title = "Welcome"
-        contentView.textField.delegate = self
     }
     
     func setupBindings() {
@@ -41,6 +41,7 @@ class EnterNameViewController: UIViewController {
             self.navigationController?.setViewControllers([letsPlay], animated: true)
         }
         contentView.nextButton.addAction(action, for: .touchUpInside)
+        contentView.textField.delegate = self
     }
 }
 

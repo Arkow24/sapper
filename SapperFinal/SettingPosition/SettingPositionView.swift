@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 final class SettingPositionView: BaseView {
     
     // MARK: - Subviews
@@ -21,7 +20,6 @@ final class SettingPositionView: BaseView {
         return saveView
     }()
     
-    
     let saveButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -30,7 +28,6 @@ final class SettingPositionView: BaseView {
         return button
     }()
     
-    
     // MARK: - Setup
     
     override func setupView() {
@@ -38,8 +35,7 @@ final class SettingPositionView: BaseView {
     }
     
     override func setupSubviews() {
-        addSubview(collectionView)
-        addSubview(saveButton)
+        [collectionView,saveButton].forEach(addSubview)
     }
     
     override func setupConstraints() {
@@ -54,5 +50,4 @@ final class SettingPositionView: BaseView {
             saveButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
-    
 }

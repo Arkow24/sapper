@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 final class LetsPlayViewController: UIViewController {
     
     // MARK: - Properties
@@ -42,13 +41,11 @@ final class LetsPlayViewController: UIViewController {
             self.navigationController?.setViewControllers([createView], animated: true)
             createView.dataUserLocal = self.user
         }
-        
         contentView.createbutton.addAction(actionCreate, for: .touchUpInside)
         
         let actionPlay = UIAction { _ in
             let playView = LobbyViewCotroller()
             self.navigationController?.pushViewController(playView, animated: true)
-            
         }
         contentView.playButton.addAction(actionPlay, for: .touchUpInside)
     }

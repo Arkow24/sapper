@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 final class GameViewCell: UICollectionViewCell {
     
     //MARK: - Properties
@@ -24,7 +23,6 @@ final class GameViewCell: UICollectionViewCell {
         label.font = .systemFont(ofSize: 12)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
-        
         return label
     }()
     

@@ -32,7 +32,6 @@ final class SettingPositionViewCell: UICollectionViewCell {
         setupView()
         setupSubviews()
         setupConstraints()
-        
     }
     
     required init?(coder: NSCoder) {

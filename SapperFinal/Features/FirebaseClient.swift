@@ -26,7 +26,6 @@ final class FirebaseClient {
                 tab.append(post)
             }
             completion(tab as Any as! [UserModel])
-            print(tab)
         }
     }
     
@@ -34,6 +33,4 @@ final class FirebaseClient {
         guard let value = value else {return}
         ref.child("Users").child(value.name).setValue(value.positions)
     }
-    
-    
 }

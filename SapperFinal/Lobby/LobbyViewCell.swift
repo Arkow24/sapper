@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 final class LobbyViewCell: UITableViewCell {
     
     //MARK: - Properties
@@ -23,9 +22,7 @@ final class LobbyViewCell: UITableViewCell {
        let label = UILabel()
         label.font = .systemFont(ofSize: 30)
         label.textColor = .black
-        //label.backgroundColor = .red
         label.translatesAutoresizingMaskIntoConstraints = false
-       // label.text = "test"
         return label
     }()
     

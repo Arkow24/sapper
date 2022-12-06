@@ -35,7 +35,6 @@ final class ResultPanelView: BaseView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Return to Play Screen", for: .normal)
         button.backgroundColor = .red
-        
         return button
     }()
     
@@ -46,9 +45,7 @@ final class ResultPanelView: BaseView {
     }
     
     override func setupSubviews() {
-        addSubview(playerName)
-        addSubview(resultPlayer)
-        addSubview(returnButton)
+        [playerName,resultPlayer,returnButton].forEach(addSubview)
     }
     
     override func setupConstraints() {
@@ -64,7 +61,6 @@ final class ResultPanelView: BaseView {
             returnButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             returnButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
             returnButton.heightAnchor.constraint(equalToConstant: 60)
-        
         ])
     }
 }

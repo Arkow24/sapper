@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 final class EnterNameView: BaseView {
     
     // MARK: - Subviews
@@ -27,7 +26,6 @@ final class EnterNameView: BaseView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("SET", for: .normal)
-//        button.setImage(.init(systemName: "square.and.arrow.up"), for: .normal)
         button.backgroundColor = .red
         button.layer.cornerRadius = 50
        
@@ -52,9 +50,7 @@ final class EnterNameView: BaseView {
     }
 
     override func setupSubviews() {
-        addSubview(titleLabel)
-        addSubview(textField)
-        addSubview(nextButton)
+        [titleLabel,textField,nextButton].forEach(addSubview)
     }
  
     override func setupConstraints() {
@@ -62,16 +58,13 @@ final class EnterNameView: BaseView {
             titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
             textField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 120),
             textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-
             nextButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             nextButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             nextButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -300),
             nextButton.heightAnchor.constraint(equalToConstant: 100)
-            
         ])
     }
 }

@@ -25,7 +25,6 @@ final class GameView: BaseView {
         button.backgroundColor = .red
        return button
     }()
-
     
     //MARK: - Setup
     
@@ -34,8 +33,7 @@ final class GameView: BaseView {
     }
     
     override func setupSubviews() {
-        addSubview(playCollectionView)
-        addSubview(mainButton)
+        [playCollectionView,mainButton].forEach(addSubview)
     }
     
     override func setupConstraints() {

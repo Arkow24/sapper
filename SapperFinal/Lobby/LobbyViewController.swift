@@ -28,7 +28,10 @@ final class LobbyViewCotroller: UIViewController {
         super.viewDidLoad()
         
         setupView()
-        setupBindings()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         FirebaseClient.shared.fetchAllUsers { users in
             self.users = users
@@ -43,11 +46,7 @@ final class LobbyViewCotroller: UIViewController {
         contentView.tableView.dataSource = self
         contentView.tableView.delegate = self
         contentView.tableView.register(LobbyViewCell.self, forCellReuseIdentifier: LobbyViewCell.identifier)
-        
-     
     }
-    
-    func setupBindings() {}
 }
 
 extension LobbyViewCotroller: UITableViewDataSource {
@@ -56,14 +55,15 @@ extension LobbyViewCotroller: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: LobbyViewCell.identifier, for: indexPath) as? LobbyViewCell else {return UITableViewCell()}
+    guard let cell = tableView.dequeueReusableCell(
+        withIdentifier: LobbyViewCell.identifier, for: indexPath)
+        as? LobbyViewCell else {return UITableViewCell()}
 
         let item = self.users[indexPath.item]
         cell.userLabel.text = item.name
      
     return cell
     }
-    
 }
 
 extension LobbyViewCotroller:UITableViewDelegate {
